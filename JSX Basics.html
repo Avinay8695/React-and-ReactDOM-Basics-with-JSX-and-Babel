@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Define a dynamic content variable
+      const dynamicText = "Seize the day";
+
+      // Define a boolean variable for conditional rendering
+      const showFirstParagraph = true;
+
+      // Create JSX elements for both paragraphs
+      const firstParagraph = <p>{dynamicText}</p>;
+      const secondParagraph = <p>Carpe diem!</p>;
+
+      // Render the appropriate paragraph based on the boolean value
+      const paragraphElement = showFirstParagraph ? firstParagraph : secondParagraph;
+
+      // Render the JSX element inside the div with id "root"
+      ReactDOM.render(paragraphElement, document.querySelector("#root"));
+    </script>
+  </body>
+</html>
